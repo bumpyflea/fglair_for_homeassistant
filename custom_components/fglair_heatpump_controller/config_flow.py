@@ -90,9 +90,9 @@ class FGLairIntegrationFlowHandler(ConfigFlow, domain=DOMAIN):  # type: ignore[c
                     tokenpath,
                     async_get_clientsession(self.hass),
                 )
-                _LOGGER.debug("Invoking authenticate for %s", username)
+                _LOGGER.debug("Invoking authenticate for (redacted)")
                 acquired_token = await _client.async_authenticate()
-                _LOGGER.debug("authentication token %s", acquired_token)
+                _LOGGER.debug("authentication token acquired")
         except (TimeoutError, ClientError):
             return self.async_abort(reason="cannot_connect")
 
